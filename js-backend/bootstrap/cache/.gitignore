@@ -1,2 +1,2 @@
 *
-!.gitignore
+!.gitignore // Exclude all files in the cache directory except the .gitignore file itself.

@@ -1,18 +1,24 @@
-root = true
+root = true     # Indicate that this is the root .editorconfig file.
 
 [*]
-charset = utf-8
-end_of_line = lf
-indent_size = 4
-indent_style = space
-insert_final_newline = true
-trim_trailing_whitespace = true
+charset = utf-8     # Set the character encoding to UTF-8 for all files.
+end_of_line = lf  # Use LF (Line Feed) for line endings.
+indent_size = 4  # Set the indentation size to 4 spaces.    
+indent_style = space    # Use spaces for indentation.
+insert_final_newline = true # Ensure that files end with a newline.
+trim_trailing_whitespace = true # Remove any trailing whitespace at the end of lines.
 
 [*.md]
-trim_trailing_whitespace = false
+trim_trailing_whitespace = false    # Do not trim trailing whitespace in Markdown files.
 
-[*.{yml,yaml}]
-indent_size = 2
+[*.{json,js,ts,vue,css,scss,html,php}]
+indent_size = 2  # Set the indentation size to 2 spaces for these file types.
+
+[*.{yml,yaml}]      
+indent_size = 2 # Set the indentation size to 2 spaces for YAML files.
+
+[*.{xml,svg}]
+indent_size = 2 # Set the indentation size to 2 spaces for XML and SVG files.
 
 [docker-compose.yml]
-indent_size = 4
+indent_size = 4  # Set the indentation size to 4 spaces for Docker Compose files.

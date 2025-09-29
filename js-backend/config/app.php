@@ -1,6 +1,6 @@
 <?php
 
-return [
+return [ // Start of the configuration array.
 
     /*
     |--------------------------------------------------------------------------
@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Laravel'),// The name of the application, defaulting to 'Laravel' if not set in the environment.
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'production'), // The application environment, defaulting to 'production' if not set in the environment.
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', false), // Debug mode setting, defaulting to false if not set in the environment.
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost'), // The base URL of the application, defaulting to 'http://localhost' if not set in the environment.
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'UTC',// The default timezone for the application.
 
     /*
     |--------------------------------------------------------------------------
@@ -78,11 +78,11 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'en'),// The default locale for the application.
 
-    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
+    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),// The fallback locale to use when the current locale is not available.
 
-    'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
+    'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),// The locale used by the Faker library for generating fake data.
 
     /*
     |--------------------------------------------------------------------------
@@ -95,13 +95,13 @@ return [
     |
     */
 
-    'cipher' => 'AES-256-CBC',
+    'cipher' => 'AES-256-CBC',// The encryption cipher used by the application.
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY'),// The encryption key for the application.
 
-    'previous_keys' => [
-        ...array_filter(
-            explode(',', (string) env('APP_PREVIOUS_KEYS', ''))
+    'previous_keys' => [ // An array of previous encryption keys for key rotation.
+        ...array_filter( // Filter out any empty values.
+            explode(',', (string) env('APP_PREVIOUS_KEYS', '')) // Get previous keys from the environment variable and split by commas.
         ),
     ],
 
@@ -118,9 +118,9 @@ return [
     |
     */
 
-    'maintenance' => [
-        'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
-        'store' => env('APP_MAINTENANCE_STORE', 'database'),
+    'maintenance' => [ // Configuration for maintenance mode.
+        'driver' => env('APP_MAINTENANCE_DRIVER', 'file'), // The driver used for maintenance mode, defaulting to 'file' if not set in the environment.
+        'store' => env('APP_MAINTENANCE_STORE', 'database'), // The store used for the cache driver, defaulting to 'database' if not set in the environment.
     ],
 
 ];

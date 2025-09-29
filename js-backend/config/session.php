@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'database'),
+    'driver' => env('SESSION_DRIVER', 'database'), //   The default session driver, which can be set via the SESSION_DRIVER environment variable, defaulting to 'database' if not set.
 
     /*
     |--------------------------------------------------------------------------
@@ -32,9 +32,9 @@ return [
     |
     */
 
-    'lifetime' => (int) env('SESSION_LIFETIME', 120),
+    'lifetime' => (int) env('SESSION_LIFETIME', 120), // The session lifetime in minutes, which can be set via the SESSION_LIFETIME environment variable, defaulting to 120 minutes if not set.
 
-    'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false),
+    'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false),//   Whether sessions should expire when the browser is closed, which can be set via the SESSION_EXPIRE_ON_CLOSE environment variable, defaulting to false if not set.
 
     /*
     |--------------------------------------------------------------------------

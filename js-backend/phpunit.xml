@@ -1,34 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
-         bootstrap="vendor/autoload.php"
-         colors="true"
+<?xml version="1.0" encoding="UTF-8"?>          <!-- XML declaration specifying version and encoding -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  <!-- Root element for PHPUnit configuration with XML Schema instance namespace -->
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd" <!-- Location of the PHPUnit XML schema -->
+         bootstrap="vendor/autoload.php"               <!-- Path to the bootstrap file to set up the testing environment -->
+         colors="true"                           <!-- Enable colored output in the terminal -->
 >
-    <testsuites>
-        <testsuite name="Unit">
-            <directory>tests/Unit</directory>
-        </testsuite>
-        <testsuite name="Feature">
-            <directory>tests/Feature</directory>
-        </testsuite>
-    </testsuites>
-    <source>
-        <include>
-            <directory>app</directory>
-        </include>
-    </source>
-    <php>
-        <env name="APP_ENV" value="testing"/>
-        <env name="APP_MAINTENANCE_DRIVER" value="file"/>
-        <env name="BCRYPT_ROUNDS" value="4"/>
-        <env name="CACHE_STORE" value="array"/>
-        <env name="DB_CONNECTION" value="sqlite"/>
-        <env name="DB_DATABASE" value=":memory:"/>
-        <env name="MAIL_MAILER" value="array"/>
-        <env name="QUEUE_CONNECTION" value="sync"/>
-        <env name="SESSION_DRIVER" value="array"/>
-        <env name="PULSE_ENABLED" value="false"/>
-        <env name="TELESCOPE_ENABLED" value="false"/>
-        <env name="NIGHTWATCH_ENABLED" value="false"/>
+    <testsuites>                            <!-- Define test suites -->
+        <testsuite name="Unit">           <!-- Define a test suite named "Unit" -->
+            <directory>tests/Unit</directory>   <!-- Directory containing unit tests -->
+        </testsuite>                     <!-- End of the "Unit" test suite -->
+        <testsuite name="Feature">  <!-- Define a test suite named "Feature" -->
+            <directory>tests/Feature</directory> <!-- Directory containing feature tests -->
+        </testsuite>                 <!-- End of the "Feature" test suite -->
+    </testsuites>                     <!-- End of test suites definition -->
+    <source>                       <!-- Define source directories for code coverage analysis -->
+        <include>           <!-- Include the following directory in code coverage -->
+            <directory>app</directory>  <!-- Directory containing application code -->
+        </include>                     <!-- End of include directive -->
+    </source>                  <!-- End of source definition -->
+    <php>                        <!-- Define PHP environment variables for the testing environment -->
+        <env name="APP_ENV" value="testing"/>   <!-- Set the application environment to "testing" -->
+        <env name="APP_MAINTENANCE_DRIVER" value="file"/>       <!-- Set the maintenance mode driver to "file" -->
+        <env name="BCRYPT_ROUNDS" value="4"/>    <!-- Set the number of bcrypt rounds to 4 for faster hashing during tests -->
+        <env name="CACHE_STORE" value="array"/>  <!-- Use an in-memory array for caching during tests -->
+        <env name="DB_CONNECTION" value="sqlite"/>  <!-- Use SQLite as the database connection for tests -->
+        <env name="DB_DATABASE" value=":memory:"/>  <!-- Use an in-memory SQLite database for tests -->
+        <env name="MAIL_MAILER" value="array"/> <!-- Use an in-memory array for mail during tests -->
+        <env name="QUEUE_CONNECTION" value="sync"/> <!-- Use synchronous queue processing during tests -->
+        <env name="SESSION_DRIVER" value="array"/>  <!-- Use an in-memory array for session storage during tests -->
+        <env name="PULSE_ENABLED" value="false"/>   <!-- Disable Pulse monitoring during tests -->
+        <env name="TELESCOPE_ENABLED" value="false"/> <!-- Disable Telescope monitoring during tests -->
+        <env name="NIGHTWATCH_ENABLED" value="false"/> <!-- Disable Nightwatch monitoring during tests -->
     </php>
 </phpunit>

@@ -1,9 +1,9 @@
 <?php
 
-use Monolog\Handler\NullHandler;
-use Monolog\Handler\StreamHandler;
-use Monolog\Handler\SyslogUdpHandler;
-use Monolog\Processor\PsrLogMessageProcessor;
+use Monolog\Handler\NullHandler; // Import the NullHandler class from the Monolog library to handle null logging.
+use Monolog\Handler\StreamHandler; // Import the StreamHandler class from the Monolog library to handle stream logging.
+use Monolog\Handler\SyslogUdpHandler; // Import the SyslogUdpHandler class from the Monolog library to handle syslog over UDP.
+use Monolog\Processor\PsrLogMessageProcessor; // Import the PsrLogMessageProcessor class from the Monolog library to process log messages.
 
 return [
 
@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'default' => env('LOG_CHANNEL', 'stack'),
+    'default' => env('LOG_CHANNEL', 'stack'), //    The default log channel, which can be set via the LOG_CHANNEL environment variable, defaulting to 'stack' if not set.
 
     /*
     |--------------------------------------------------------------------------
@@ -32,8 +32,8 @@ return [
     */
 
     'deprecations' => [
-        'channel' => env('LOG_DEPRECATIONS_CHANNEL', 'null'),
-        'trace' => env('LOG_DEPRECATIONS_TRACE', false),
+        'channel' => env('LOG_DEPRECATIONS_CHANNEL', 'null'), // The log channel to use for deprecation warnings, which can be set via the LOG_DEPRECATIONS_CHANNEL environment variable, defaulting to 'null' if not set.
+        'trace' => env('LOG_DEPRECATIONS_TRACE', false), // Whether to include stack traces in deprecation warnings, which can be set via the LOG_DEPRECATIONS_TRACE environment variable, defaulting to false if not set.
     ],
 
     /*

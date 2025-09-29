@@ -14,12 +14,12 @@ return [
     |
     */
 
-    'postmark' => [
-        'token' => env('POSTMARK_TOKEN'),
+    'postmark' => [ // Configuration for the Postmark email service.
+        'token' => env('POSTMARK_TOKEN'),// The API token for Postmark, which can be set via the POSTMARK_TOKEN environment variable.
     ],
 
     'resend' => [
-        'key' => env('RESEND_KEY'),
+        'key' => env('RESEND_KEY'), // The API key for Resend, which can be set via the RESEND_KEY environment variable.
     ],
 
     'ses' => [

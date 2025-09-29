@@ -1,25 +1,25 @@
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
-        Options -MultiViews -Indexes
-    </IfModule>
+        Options -MultiViews -Indexes        # Disable MultiViews and Indexes for better URL handling and security.
+    </IfModule>                 
 
-    RewriteEngine On
+    RewriteEngine On               # Enable the RewriteEngine for URL rewriting.
 
     # Handle Authorization Header
-    RewriteCond %{HTTP:Authorization} .
-    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    RewriteCond %{HTTP:Authorization} .     # Check if the Authorization header is present in the request.
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]   # Set the HTTP_AUTHORIZATION environment variable with the value of the Authorization header.
 
     # Handle X-XSRF-Token Header
-    RewriteCond %{HTTP:x-xsrf-token} .
-    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+    RewriteCond %{HTTP:x-xsrf-token} .  # Check if the X-XSRF-Token header is present in the request.
+    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]  # Set the HTTP_X_XSRF_TOKEN environment variable with the value of the X-XSRF-Token header.
 
     # Redirect Trailing Slashes If Not A Folder...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
+    RewriteCond %{REQUEST_FILENAME} !-d     # Check if the requested filename is not a directory.
+    RewriteCond %{REQUEST_URI} (.+)/$   # Capture the requested URI without the trailing slash.
+    RewriteRule ^ %1 [L,R=301]  # Redirect to the URI without the trailing slash with a 301 status code.
 
     # Send Requests To Front Controller...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
+    RewriteCond %{REQUEST_FILENAME} !-d    # Check if the requested filename is not a directory.
+    RewriteCond %{REQUEST_FILENAME} !-f   # Check if the requested filename is not a file.
+    RewriteRule ^ index.php [L]     # Redirect all other requests to index.php for handling by the front controller.
 </IfModule>

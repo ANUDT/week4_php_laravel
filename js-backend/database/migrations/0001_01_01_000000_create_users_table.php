@@ -1,17 +1,17 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration; // Import the Migration class to create and manage database migrations.
+use Illuminate\Database\Schema\Blueprint; // Import the Blueprint class to define the structure of database tables.
+use Illuminate\Support\Facades\Schema;// Import the Schema facade to interact with the database schema.
 
-return new class extends Migration
+return new class extends Migration // Define an anonymous class that extends the Migration class.
 {
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up(): void // Define the up method to create the necessary database tables.
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {// Create the "users" table with the specified columns.
             $table->id();
             $table->string('name');
             $table->string('email')->unique();

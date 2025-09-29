@@ -8,4 +8,4 @@ abstract class Controller // Define the base Controller class as an abstract cla
 {
     //
 }
-C:\Users\Adebi\OneDrive\Desktop\week4_php_laravel\js-backend\app\Http\Controllers\Controller.php
+// The abstract class can be extended by other controllers in the application.

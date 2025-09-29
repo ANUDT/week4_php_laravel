@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('QUEUE_CONNECTION', 'database'),
+    'default' => env('QUEUE_CONNECTION', 'database'), //    The default queue connection, which can be set via the QUEUE_CONNECTION environment variable, defaulting to 'database' if not set.
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'connections' => [
+    'connections' => [ // Definition of various queue connections.
 
         'sync' => [
             'driver' => 'sync',

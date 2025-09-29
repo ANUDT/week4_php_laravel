@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'log'),
+    'default' => env('MAIL_MAILER', 'log'), // The default mailer to use for sending emails, which can be set via the MAIL_MAILER environment variable, defaulting to 'log' if not set.
 
     /*
     |--------------------------------------------------------------------------
@@ -35,9 +35,9 @@ return [
     |
     */
 
-    'mailers' => [
+    'mailers' => [ // Definition of various mailers.
 
-        'smtp' => [
+        'smtp' => [ // SMTP mailer configuration.
             'transport' => 'smtp',
             'scheme' => env('MAIL_SCHEME'),
             'url' => env('MAIL_URL'),
